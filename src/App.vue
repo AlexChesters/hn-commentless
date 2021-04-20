@@ -9,7 +9,7 @@ body {
 }
 
 a {
-  color: none;
+  color: inherit;
 }
 
 button {
