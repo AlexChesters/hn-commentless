@@ -9,18 +9,17 @@
 }
 </style>
 
-
 <template>
   <div id="app">
-    <h1>Hello, world!</h1>
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
+    <PostList />
   </div>
 </template>
 
 <script>
+import PostList from './components/Post-List'
 
 export default {
   name: 'App',
-  components: {}
+  components: { PostList }
 }
 </script>
