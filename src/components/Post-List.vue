@@ -3,6 +3,7 @@
     <h1 v-for="post in posts[index]" :key="post.id">
       {{ post.title }}
     </h1>
+    <button v-on:click="viewMore">More</button>
   </section>
 </template>
 
@@ -14,11 +15,12 @@ export default {
   data: function () { return { posts: [], index: 0 } },
   mounted: async function () {
     this.posts = await hn.posts(this.index)
-
-    setInterval(async () => {
+  },
+  methods: {
+    viewMore: async function () {
       this.index = this.index + 1
       this.posts = await hn.posts(this.index)
-    }, 5000)
+    }
   }
 }
 </script>
