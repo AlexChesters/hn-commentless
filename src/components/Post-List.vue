@@ -13,9 +13,12 @@ export default {
   name: 'PostList',
   data: function () { return { posts: [], index: 0 } },
   mounted: async function () {
-    this.posts = await hn.posts()
+    this.posts = await hn.posts(this.index)
 
-    console.log(this.posts)
+    setInterval(async () => {
+      this.index = this.index + 1
+      this.posts = await hn.posts(this.index)
+    }, 5000)
   }
 }
 </script>
