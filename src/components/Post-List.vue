@@ -1,7 +1,7 @@
 <template>
   <section>
     <h1 v-for="post in posts[index]" :key="post.id">
-      {{ post.title }}
+      <a :href="post.url" target="_blank" rel="noreferrer">{{ post.title }}</a>
     </h1>
     <button v-on:click="viewMore">More</button>
   </section>
