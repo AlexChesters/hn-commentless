@@ -7,16 +7,13 @@
 </template>
 
 <script>
-import chunk from '../utils/chunk'
+import hn from '../clients/hn'
 
 export default {
   name: 'PostList',
   data: function () { return { posts: [], index: 0 } },
   mounted: async function () {
-    const res = await window.fetch('https://hacker-news.firebaseio.com/v0/topstories.json')
-    const data = await res.json()
-
-    this.posts = chunk(data, 30)
+    this.posts = await hn.posts()
   }
 }
 </script>
