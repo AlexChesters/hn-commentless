@@ -1,12 +1,22 @@
 <style>
+body {
+  background-color: #f7f7f7;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   text-align: center;
-  color: #2c3e50;
 }
 
 a {
-  color: #2c3e50;
+  color: none;
+}
+
+button {
+  height: 35px;
+  width: 90px;
+  font-size: larger;
+  border-radius: 10%;
 }
 </style>
 
