@@ -25,7 +25,7 @@ jobs:
         run: |
           git switch -c hello
           git add -f dist/
-          git commit --author "GitHub Actions" -m "update pages"
+          git commit --author "GitHub Actions <>" -m "update pages"
           git push
       # - name: deploy
       #   uses: JamesIves/github-pages-deploy-action@4.1.1
