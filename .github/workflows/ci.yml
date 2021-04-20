@@ -24,7 +24,7 @@ jobs:
       - name: deploy
         run: |
           git switch -c hello
-          git add dist/
+          git add -f dist/
           git commit -m "update pages"
           git push
       # - name: deploy
