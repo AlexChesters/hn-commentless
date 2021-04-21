@@ -38,7 +38,7 @@ export default {
             <h1 key={index}>{post.title}</h1>
           ))
         }
-        <button>More</button>
+        <button vOn:click={this.viewMore}>More</button>
       </section>
     )
   }
