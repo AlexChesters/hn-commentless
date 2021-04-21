@@ -1,15 +1,3 @@
-<template>
-  <section v-if="loading">
-    <h1>Loading...</h1>
-  </section>
-  <section v-else>
-    <h1 v-for="post in posts[index]" :key="post.id">
-      <a :href="post.url" target="_blank" rel="noreferrer">{{ post.title }}</a>
-    </h1>
-    <button v-on:click="viewMore">More</button>
-  </section>
-</template>
-
 <script>
 import hn from '../clients/hn'
 
@@ -33,6 +21,26 @@ export default {
       this.posts = await hn.posts(this.index)
       this.loading = false
     }
+  },
+  render: function (h) { // eslint-disable-line no-unused-vars
+    if (this.loading) {
+      return (
+        <section>
+          <h1>Loading...</h1>
+        </section>
+      )
+    }
+
+    return (
+      <section>
+        {
+          this.posts[this.index].map((post, index) => (
+            <h1 key={index}>{post.title}</h1>
+          ))
+        }
+        <button>More</button>
+      </section>
+    )
   }
 }
 </script>

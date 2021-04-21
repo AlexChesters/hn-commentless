@@ -20,17 +20,18 @@ button {
 }
 </style>
 
-<template>
-  <div id="app">
-    <PostList />
-  </div>
-</template>
-
 <script>
 import PostList from './components/Post-List'
 
 export default {
   name: 'App',
-  components: { PostList }
+  components: { PostList },
+  render: function (h) { // eslint-disable-line no-unused-vars
+    return (
+      <div id="app">
+        <PostList />
+      </div>
+    )
+  }
 }
 </script>
