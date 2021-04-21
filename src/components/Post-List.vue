@@ -35,7 +35,7 @@ export default {
       <section>
         {
           this.posts[this.index].map((post, index) => (
-            <h1 key={index}>{post.title}</h1>
+            <h1 key={index}><a href={post.url} target='_blank' rel='noreferrer'>{post.title}</a></h1>
           ))
         }
         <button vOn:click={this.viewMore}>More</button>
