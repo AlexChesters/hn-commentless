@@ -22,15 +22,7 @@ jobs:
       - name: build code
         run: npm run build
       - name: deploy
-        run: |
-          git switch -c hello
-          git add -f dist/
-          git config user.email "<>"
-          git config user.name "GitHub Actions"
-          git commit -m "update pages"
-          git push -u origin hello
-      # - name: deploy
-      #   uses: JamesIves/github-pages-deploy-action@4.1.1
-      #   with:
-      #     branch: gh-pages
-      #     folder: dist
+        uses: JamesIves/github-pages-deploy-action@4.1.1
+        with:
+          branch: gh-pages
+          folder: dist
