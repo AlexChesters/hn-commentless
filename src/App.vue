@@ -18,6 +18,10 @@ button {
   font-size: larger;
   border-radius: 10%;
 }
+
+button:hover {
+  cursor: pointer;
+}
 </style>
 
 <script>
