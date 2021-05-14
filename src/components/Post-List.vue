@@ -1,3 +1,11 @@
+<style>
+  #app a {
+    display: block;
+    font-size: xx-large;
+    margin-bottom: 0.75em;
+  }
+</style>
+
 <script>
 import hn from '../clients/hn'
 
@@ -32,10 +40,10 @@ export default {
     }
 
     return (
-      <section>
+      <section tabindex='0'>
         {
           this.posts[this.index].map((post, index) => (
-            <h1 key={index}><a href={post.url} target='_blank' rel='noreferrer'>{post.title}</a></h1>
+            <a key={index} href={post.url} target='_blank' rel='noreferrer' tabindex='0'>{post.title}</a>
           ))
         }
         <button vOn:click={this.viewMore}>More</button>
